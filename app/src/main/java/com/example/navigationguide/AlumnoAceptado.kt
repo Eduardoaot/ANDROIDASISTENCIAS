@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 
 //Eduardo es un chingon
 //Si cierto
+//XD
 @Composable
 fun AlertaAlumnoAceptado(onDismiss: () -> Unit){
     Box(
@@ -65,7 +66,7 @@ fun AlertaAlumnoAceptado(onDismiss: () -> Unit){
                 )
 
                 Text(
-                    text = "Alumno aceptado.",
+                    text = "Alumno aceptado",
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp,
                     color = Color.Black

@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 //Eduardo es un chingon
 //Si cierto
 //XD
+//Esto esta super chingon la manera de trabajar
 @Composable
 fun AlertaAlumnoAceptado(onDismiss: () -> Unit){
     Box(

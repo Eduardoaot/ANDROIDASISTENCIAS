@@ -1,48 +1,24 @@
-package com.example.navigationguide
+package com.example.navigationguide.pantallas
 
 import androidx.compose.runtime.Composable
-import android.Manifest
-import android.content.Context
-import android.widget.Toast
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.camera.core.*
-import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.camera.view.PreviewView
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.FlashOn
-import androidx.compose.material.icons.filled.RadioButtonUnchecked
-import androidx.compose.material.icons.filled.Cached
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.*
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.viewinterop.AndroidView
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
+import com.example.navigationguide.responses.Clase
 import com.example.navigationguide.viewmodel.ClasesViewModel
-import com.google.mlkit.vision.barcode.BarcodeScanning
-import com.google.mlkit.vision.barcode.common.Barcode
-import com.google.mlkit.vision.common.InputImage
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.asExecutor
-import java.util.concurrent.Executor
 
 @Composable
 fun ListaScreen(
@@ -68,22 +44,43 @@ fun ListaScreen(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Color(0xFF0061F2))
-                .padding(vertical = 20.dp, horizontal = 12.dp)
+                .height(100.dp)
+                .background(Color(0xFF3466BB))
+                .padding(start = 12.dp, end = 12.dp, top = 40.dp)
         ) {
-            Text(
-                text = " \nLista",
-                style = MaterialTheme.typography.titleLarge.copy(color = Color.White),
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.align(Alignment.TopCenter)
-            )
-            IconButton(
-                onClick = { navController.popBackStack() },
-                modifier = Modifier.align(Alignment.CenterStart)
+            // Columna izquierda: Botón de regreso
+            Column(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .align(Alignment.CenterStart),
+                verticalArrangement = Arrangement.Center
             ) {
-                Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color.White)
+                IconButton(
+                    onClick = { navController.popBackStack() }
+                ) {
+                    Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color.White)
+                }
+            }
+
+            // Columna central: Título
+            Column(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .align(Alignment.Center),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "Lista de asistencia",
+                    style = MaterialTheme.typography.titleLarge.copy(color = Color.White),
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
+
+
+
+
         val listaAsistencia = viewModel.listaAsistencia.value
         val clase = listaAsistencia?.clase
 

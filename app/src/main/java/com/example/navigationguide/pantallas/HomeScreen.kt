@@ -1,4 +1,4 @@
-package com.example.navigationguide
+package com.example.navigationguide.pantallas
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,10 +19,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.navigationguide.R
 import com.example.navigationguide.core.navigation.ListaAsistencia
 import com.example.navigationguide.core.navigation.Scanner
 import com.example.navigationguide.viewmodel.ClasesViewModel
-import kotlinx.serialization.Serializable
 
 @Composable
 fun HomeScreen(
@@ -40,17 +40,19 @@ fun HomeScreen(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(70.dp)
-                .background(Color(0xFF004AAD)),
+                .height(100.dp)
+                .background(Color(0xFF3466BB))
+                .padding(top = 40.dp),
             contentAlignment = Alignment.Center
         ) {
             Row(
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.logo),
+                    painter = painterResource(id = R.drawable.logo_scanli_pequenio),
                     contentDescription = "Logo",
-                    modifier = Modifier.size(40.dp)
+                    modifier = Modifier.size(50.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(
@@ -62,6 +64,8 @@ fun HomeScreen(
                 )
             }
         }
+
+
 
         Spacer(modifier = Modifier.height(16.dp))
 

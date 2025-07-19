@@ -1,4 +1,4 @@
-package com.example.navigationguide
+package com.example.navigationguide.responses
 
 data class ListaResponse(
     val success: Boolean,

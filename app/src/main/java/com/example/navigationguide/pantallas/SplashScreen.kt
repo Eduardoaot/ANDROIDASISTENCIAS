@@ -1,4 +1,4 @@
-package com.example.navigationguide
+package com.example.navigationguide.pantallas
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -32,12 +32,12 @@ fun SplashScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF004AAD)),
+            .background(Color(0xFF3466BB)),
         contentAlignment = Alignment.Center
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
-                painter = painterResource(id = R.drawable.logo),
+                painter = painterResource(id = R.drawable.logo_scanli_pequenio),
                 contentDescription = "Logo",
                 modifier = Modifier.size(150.dp)
             )

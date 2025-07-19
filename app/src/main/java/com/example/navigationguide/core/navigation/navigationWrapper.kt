@@ -5,12 +5,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.example.navigationguide.DataEScreen
-import com.example.navigationguide.ErrorScreen
-import com.example.navigationguide.HomeScreen
-import com.example.navigationguide.ListaScreen
-import com.example.navigationguide.ScanningScreen
-import com.example.navigationguide.SplashScreen
+import com.example.navigationguide.pantallas.DataEScreen
+import com.example.navigationguide.pantallas.ErrorScreen
+import com.example.navigationguide.pantallas.HomeScreen
+import com.example.navigationguide.pantallas.ListaScreen
+import com.example.navigationguide.pantallas.ScanningScreen
+import com.example.navigationguide.pantallas.SplashScreen
 
 @Composable
 fun NavigationWrapper() {

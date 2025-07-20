@@ -160,9 +160,12 @@ fun ListaScreen(
                         Checkbox(
                             checked = asistenciaEstados[index],
                             onCheckedChange = { checked ->
-                                asistenciaEstados[index] = checked
+                                if (!asistenciaEstados[index] && checked) {
+                                    asistenciaEstados[index] = true
+                                }
                             },
-                            modifier = Modifier.width(90.dp)
+                            modifier = Modifier.width(90.dp),
+                            enabled = !asistenciaEstados[index] // opcional: desactiva si ya está marcada
                         )
                     }
                 }
@@ -186,7 +189,9 @@ fun ListaScreen(
             contentAlignment = Alignment.Center
         ) {
             Button(
-                onClick = { },
+                onClick = {
+
+                },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0061F2)),
                 shape = RoundedCornerShape(12.dp),
                 modifier = Modifier.height(48.dp) // Ajusta la altura si quieres

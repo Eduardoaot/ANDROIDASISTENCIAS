@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.State
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.navigationguide.Resultado
-import com.example.navigationguide.Results
+import com.example.navigationguide.responses.Resultado
+import com.example.navigationguide.responses.Results
 import com.example.navigationguide.network.RetrofitClient
 import kotlinx.coroutines.launch
 

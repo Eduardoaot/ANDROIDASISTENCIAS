@@ -1,4 +1,4 @@
-package com.example.navigationguide
+package com.example.navigationguide.pantallas
 
 import android.Manifest
 import android.content.Context
@@ -22,7 +22,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.text.font.FontWeight
@@ -34,11 +33,9 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavHostController
 import com.example.navigationguide.viewmodel.ClasesViewModel
 import com.google.mlkit.vision.barcode.BarcodeScanning
-import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.asExecutor
-import kotlinx.serialization.Serializable
 import java.util.concurrent.Executor
 
 
@@ -107,26 +104,43 @@ fun ScanningScreen(
             AlertaAlumnoNoAceptado(onDismiss = { mostrarAlertaNoAceptado = false })
         }*/
 
-        // Encabezado
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Color(0xFF00BCD4))
-                .padding(vertical = 20.dp, horizontal = 12.dp)
+                .height(100.dp)
+                .background(Color(0xFF3466BB))
+                .padding(start = 12.dp, end = 12.dp, top = 40.dp)
         ) {
-            Text(
-                text = " Registrar\nAsistencia",
-                style = MaterialTheme.typography.titleLarge.copy(color = Color.White),
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.align(Alignment.TopCenter)
-            )
-            IconButton(
-                onClick = { navController.popBackStack() },
-                modifier = Modifier.align(Alignment.CenterStart)
+            // Columna izquierda: Botón de regreso
+            Column(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .align(Alignment.CenterStart),
+                verticalArrangement = Arrangement.Center
             ) {
-                Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color.White)
+                IconButton(
+                    onClick = { navController.popBackStack() }
+                ) {
+                    Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color.White)
+                }
+            }
+
+            // Columna central: Título
+            Column(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .align(Alignment.Center),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "Registrar Asistencia",
+                    style = MaterialTheme.typography.titleLarge.copy(color = Color.White),
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
+
 
         Spacer(modifier = Modifier.height(16.dp))
 

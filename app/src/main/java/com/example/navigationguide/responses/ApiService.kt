@@ -1,4 +1,4 @@
-package com.example.navigationguide
+package com.example.navigationguide.responses
 
 import retrofit2.Response
 import retrofit2.http.GET

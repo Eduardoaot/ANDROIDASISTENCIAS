@@ -64,7 +64,7 @@ fun ListaScreen(
             .background(Color(0xFFF2F2F2))
     ) {
         // Encabezado azul con ícono y título
- //
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -72,10 +72,10 @@ fun ListaScreen(
                 .padding(vertical = 20.dp, horizontal = 12.dp)
         ) {
             Text(
-                text = "Lista",
+                text = " \nLista",
                 style = MaterialTheme.typography.titleLarge.copy(color = Color.White),
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.align(Alignment.Center)
+                modifier = Modifier.align(Alignment.TopCenter)
             )
             IconButton(
                 onClick = { navController.popBackStack() },

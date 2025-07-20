@@ -1,4 +1,4 @@
-package com.example.navigationguide
+package com.example.navigationguide.pantallas
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

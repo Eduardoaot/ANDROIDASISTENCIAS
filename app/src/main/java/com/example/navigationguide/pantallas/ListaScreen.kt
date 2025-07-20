@@ -36,6 +36,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import com.example.navigationguide.responses.Clase
 import com.example.navigationguide.viewmodel.ClasesViewModel
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
@@ -79,7 +80,7 @@ fun ListaScreen(
             )
             IconButton(
                 onClick = { navController.popBackStack() },
-                modifier = Modifier.align(Alignment.CenterStart)
+                modifier = Modifier.align(Alignment.Center)
             ) {
                 Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color.White)
             }

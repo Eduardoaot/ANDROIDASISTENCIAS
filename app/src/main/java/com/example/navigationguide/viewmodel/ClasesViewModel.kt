@@ -8,6 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.navigationguide.responses.Resultado
 import com.example.navigationguide.responses.Results
 import com.example.navigationguide.network.RetrofitClient
+import com.example.navigationguide.network.RetrofitClient.apiService
+import com.example.navigationguide.responses.AsistenciaRequest
 import kotlinx.coroutines.launch
 
 class ClasesViewModel : ViewModel() {
@@ -84,6 +86,30 @@ class ClasesViewModel : ViewModel() {
             }
         }
     }
+
+    fun enviarAsistencias(idMasterList: List<Int>) {
+        viewModelScope.launch {
+            try {
+                val request = AsistenciaRequest(idMasterList)
+                val response = apiService.actualizarYVerificarAsistencias(request)
+
+                if (response.isSuccessful) {
+                    val respuesta = response.body()
+                    println("✅ ${respuesta?.mensaje}")
+                    println("Alumnos registrados: ${respuesta?.registrados}")
+                    if (!respuesta?.errores.isNullOrEmpty()) {
+                        println("Errores: ${respuesta?.errores}")
+                    }
+                } else {
+                    println("❌ Error al enviar asistencias: ${response.code()}")
+                }
+            } catch (e: Exception) {
+                println("⚠️ Excepción al enviar asistencias: ${e.message}")
+            }
+        }
+    }
+
+
 
 
 }

@@ -72,10 +72,10 @@ fun ListaScreen(
                 .padding(vertical = 20.dp, horizontal = 12.dp)
         ) {
             Text(
-                text = " \nLista",
+                text = "Lista",
                 style = MaterialTheme.typography.titleLarge.copy(color = Color.White),
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.align(Alignment.TopCenter)
+                modifier = Modifier.align(Alignment.Center)
             )
             IconButton(
                 onClick = { navController.popBackStack() },

@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.sp
 //Esto esta super chingon la manera de trabajar
 //jona es la mera mera
 //Hola
+// ajsjs
 @Composable
 fun AlertaAlumnoAceptado(onDismiss: () -> Unit){
     Box(

@@ -61,7 +61,7 @@ fun ListaScreen(
                     Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color.White)
                 }
             }
-
+            //Tremendo
             // Columna central: Título
             Column(
                 modifier = Modifier

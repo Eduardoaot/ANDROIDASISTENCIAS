@@ -64,7 +64,7 @@ fun ListaScreen(
             .background(Color(0xFFF2F2F2))
     ) {
         // Encabezado azul con ícono y título
-
+ //
         Box(
             modifier = Modifier
                 .fillMaxWidth()

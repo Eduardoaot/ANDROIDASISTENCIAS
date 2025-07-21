@@ -60,6 +60,7 @@ fun ListaScreen(
     val fecha = remember {
         LocalDate.now().format(DateTimeFormatter.ISO_DATE)
     }
+    println("Fecha detectada: $fecha")
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
 

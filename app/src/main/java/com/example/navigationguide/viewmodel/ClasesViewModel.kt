@@ -20,7 +20,6 @@ class ClasesViewModel : ViewModel() {
     private val _contraseniaSemanal = mutableStateOf("")
     val contraseniaSemanal: State<String> get() = _contraseniaSemanal
 
-
     init {
         obtenerClases()
     }
@@ -129,8 +128,4 @@ class ClasesViewModel : ViewModel() {
             }
         }
     }
-
-
-
-
 }

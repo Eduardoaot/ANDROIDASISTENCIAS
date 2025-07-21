@@ -23,7 +23,7 @@ interface ApiService {
     @POST("/api/ActualizarYVerificarAsistencias")
     suspend fun actualizarYVerificarAsistencias(
         @Body asistenciaRequest: AsistenciaRequest
-    ): Response<AsistenciaResponse>// O puedes usar Response<YourResponseType> si el backend devuelve algo
+    ): Response<AsistenciaResponse>
 
     @GET("/api/contraseniaSemanal")
     suspend fun obtenerContraseniaSemanal(): Response<String>

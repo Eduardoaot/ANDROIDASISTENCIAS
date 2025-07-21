@@ -25,4 +25,7 @@ interface ApiService {
         @Body asistenciaRequest: AsistenciaRequest
     ): Response<AsistenciaResponse>// O puedes usar Response<YourResponseType> si el backend devuelve algo
 
+    @GET("/api/contraseniaSemanal")
+    suspend fun obtenerContraseniaSemanal(): Response<String>
+
 }

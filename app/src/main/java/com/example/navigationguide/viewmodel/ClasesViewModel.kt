@@ -17,6 +17,9 @@ class ClasesViewModel : ViewModel() {
     val clases: State<List<Resultado>> = _clases
     private val _listaAsistencia = mutableStateOf<Results?>(null)
     val listaAsistencia: State<Results?> = _listaAsistencia
+    private val _contraseniaSemanal = mutableStateOf("")
+    val contraseniaSemanal: State<String> get() = _contraseniaSemanal
+
 
     init {
         obtenerClases()
@@ -105,6 +108,24 @@ class ClasesViewModel : ViewModel() {
                 }
             } catch (e: Exception) {
                 println("⚠️ Excepción al enviar asistencias: ${e.message}")
+            }
+        }
+    }
+
+    fun obtenerContraseniaSemanal() {
+        viewModelScope.launch {
+            try {
+                val response = RetrofitClient.apiService.obtenerContraseniaSemanal()
+                if (response.isSuccessful) {
+                    response.body()?.let { contrasenia ->
+                        _contraseniaSemanal.value = contrasenia
+                        Log.d("API", "Contraseña semanal obtenida: $contrasenia")
+                    }
+                } else {
+                    Log.e("API", "Error al obtener contraseña semanal: ${response.code()} ${response.message()}")
+                }
+            } catch (e: Exception) {
+                Log.e("API", "Excepción al obtener contraseña semanal", e)
             }
         }
     }
